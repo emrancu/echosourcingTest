@@ -25,6 +25,7 @@ Created for Echo Sourcing Pvt. Ltd
 		 
 		 // select price 
          var priceContent=$(this).find('.latest-offer-price');
+         
 		 // separate money sign 
          var priceSign=(priceContent.text()).replace(/\d+/g,'');
 		 
@@ -38,7 +39,9 @@ Created for Echo Sourcing Pvt. Ltd
 		 // set new price with money sign 
 		 priceContent.html(priceSign+' '+newprice);
 		 
-		 		 // insert extra text
+		 // remove pp after price
+		  $(this).find('.latest-offer-price').next('span').remove();
+		  // insert extra text
 		 $('<span style="padding-top: 6px;display: block;font-size: 13px;"> 2 Adults and 2 Children</span>').insertAfter($(this).find(".latest-type"));
 		 
 		 
