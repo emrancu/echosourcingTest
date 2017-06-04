@@ -79,10 +79,29 @@ Created for Echo Sourcing Pvt. Ltd
  // call content chnge function
  changecontent();
   
+ /*
+ we can use ajax complete or ajaxstop but ajaxComplete for cross browser support
+ 
  // check ajax request completed or not if complete or stop then execute 
   ! function () {
     var changableContent;
     $(document).ajaxStop(function () {
+	
+        var $changableContentArea = $(".grid_planner_container");
+		
+        if(changableContent !== $changableContentArea.html()){
+            changableContent = $changableContentArea.html();
+            $changableContentArea.trigger('contentChanged');
+        }
+    });
+}();
+*/
+
+
+ // check ajax request completed or not if complete or stop then execute 
+  ! function () {
+    var changableContent;
+    $(document).ajaxComplete(function () {
 	
         var $changableContentArea = $(".grid_planner_container");
 		
