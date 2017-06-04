@@ -30,12 +30,19 @@ Created for Echo Sourcing Pvt. Ltd
 		 
 		 // separate number of price
          var priceNumber=(priceContent.text()).replace(/[^0-9\.]/g, '');
+		 
+		 if(priceNumber==199){
 		 // calculate new price
 	     var newprice=priceNumber*4;
 		 
 		 // set new price with money sign 
 		 priceContent.html(priceSign+' '+newprice);
 		 
+		 		 // insert extra text
+		 $('<span style="padding-top: 6px;display: block;font-size: 13px;"> 2 Adults and 2 Children</span>').insertAfter($(this).find(".latest-type"));
+		 
+		 
+		 }
 		 // clone/copy title content
 		 var titlecontent=titleselect.clone();
 		 
@@ -53,9 +60,7 @@ Created for Echo Sourcing Pvt. Ltd
 			 // insert more button after brand name
 		 $(moreclone.css('margin-bottom','0px')).insertBefore($(this).find(".latest-type br")); 
 		
-		 // insert extra text
-		 $('<span style="padding-top: 6px;display: block;font-size: 13px;"> 2 Adults and 2 Children</span>').insertAfter($(this).find(".latest-type"));
-		 
+
 		// add css to brand and price 
 		 $(this).find(".latest-type").css({'font-size':'15px','line-height': '22px','font-weight': 'bold'});
 		 
