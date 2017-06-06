@@ -54,7 +54,7 @@ headerarea.append('<span style="'+btncsstext+'">'+morebtn+"</span>");
 
 
 // add text after box header
-headerarea.next('ul').prepend('<p style="padding: 10px">select your size to see item that are  in stock for you</p>');
+headerarea.next('ul').prepend('<p style="padding: 10px 0px">Select your size to see item that are  in stock for you</p>');
 
 
 
@@ -81,7 +81,11 @@ sizeArea.find('ul>li>a').click(function(){
 	 
  });
  
- 
- 
+ // click on header when click on min/max button
+ headerarea.find('span').click(function(){
+	 
+headerarea.click();
+	 
+ })
  
  
